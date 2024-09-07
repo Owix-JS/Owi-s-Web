@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owi's Website</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px; /* Prevent footer overlap */
+        }
+        header {
+            background-color: #ffcccb;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #ff69b4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+        }
+        .tabcontent {
+            display: none;
+        }
+        .tabcontent.active {
+            display: block;
+        }
+        .project {
+            background-color: #fff; /* White background */
+            padding: 15px;
+            border: 2px solid #ccc; /* Light gray border */
+            border-radius: 10px; /* Rounded corners */
+            margin: 10px 0;
+        }
+        .home-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9; /* Light gray background */
+            border-radius: 8px;
+        }
+        .featured-project {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .testimonial {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #ff69b4; /* Pink border */
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #ffcccb;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Owi</h1>
+        <p>Bot Developer in Discord</p>
+        <nav>
+            <a href="javascript:void(0);" class="tablink" onclick="openTab(event, 'home')">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="javascript:void(0);" class="tablink" onclick="openTab(event, 'projects')">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="tabcontent">
+        <h2>Welcome to Owi's Website</h2>
+        <p>Hi! I'm Owi, a bot developer for Discord. Check out my projects and get to know more about what I do!</p>
+
+        <!-- Featured Projects -->
+        <div class="home-section">
+            <h3>Featured Projects</h3>
+            <div class="featured-project">
+                <h4>Dadish</h4>
+                <p>A fun bot developed to engage users in a Discord server.</p>
+                <a href="javascript:void(0);" onclick="redirectToProjects()">Learn More</a>
+            </div>
+            <div class="featured-project">
+                <h4>Momato</h4>
+                <p>A bot to greet, order, and have fun in your server! Inspired by the Dadish games.</p>
+                <a href="javascript:void(0);" onclick="redirectToProjects()">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="home-section">
+            <h3>What People Are Saying</h3>
+            <div class="testimonial">
+                <p>"Owi's bots have made a huge difference in our server. Highly recommended!"</p>
+                <p>- Client Name</p>
+            </div>
+            <div class="testimonial">
+                <p>"The bots are fantastic and the support is top-notch."</p>
+                <p>- Another Client</p>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="home-section">
+            <h3>Contact Me</h3>
+            <p>Feel free to reach out to me via <a href="contact.html">Contact Page</a> or follow me on <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="tabcontent">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Dadish</h3>
+            <p><strong>Description:</strong> A fun bot developed to engage users in a Discord server.</p>
+            <p><strong>Technologies:</strong> BotGhost.com</p>
+        </div>
+
+        <div class="project">
+            <h3>Momato</h3>
+            <p><strong>Description:</strong> A bot to greet, order, and have fun in your server! Inspired by the Dadish games.</p>
+            <p><strong>Technologies:</strong> BotGhost.com</p>
+        </div>
+
+        <div class="project">
+            <h3>Baby Radish - Modmail</h3>
+            <p><strong>Description:</strong> (Currently in repair) A ModMail bot to manage reports & issues in your server! Inspired by the Dadish games.</p>
+            <p><strong>Technologies:</strong> Discord.js</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Owi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle between tabs
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the 'active' class from all links
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the selected tab's content and add the 'active' class to the clicked link
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+
+            // Save the active tab to localStorage
+            localStorage.setItem('activeTab', tabName);
+        }
+
+        // Function to redirect to the Projects tab
+        function redirectToProjects() {
+            var projectsTabLink = document.querySelector('a[href="javascript:void(0);"][onclick*="projects"]');
+            if (projectsTabLink) {
+                // Simulate a click on the Projects tab link
+                projectsTabLink.click();
+            }
+        }
+
+        // Open the default tab (Home) or the saved tab from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            var savedTab = localStorage.getItem('activeTab') || 'home';
+            document.getElementById(savedTab).style.display = "block";
+            var tablinks = document.getElementsByClassName("tablink");
+            for (var i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].onclick.toString().indexOf(savedTab) !== -1) {
+                    tablinks[i].className += " active";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
